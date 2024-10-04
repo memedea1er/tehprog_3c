@@ -1,0 +1,45 @@
+<library>
+    <book id="1">
+        <title>Effective Java</title>
+        <author>Isaac Asimov</author>
+        <year>2019</year>
+        <genre>Programming</genre>
+        <price currency="EUR">48.49</price>
+        <isbn>978-5-875442849</isbn>
+        <format>Ebook</format>
+        <publisher>
+            <name>SciTech Publishers</name>
+            <address>
+                <city>Moscow</city>
+                <country>Russia</country>
+            </address>
+        </publisher>
+        <reviews>
+            <review>
+                <user>charlie</user>
+                <rating>3</rating>
+                <comment>Loved the examples.</comment>
+            </review>
+        </reviews>
+    </book>
+    <book id="2">
+        <title>Pride and Prejudice</title>
+        <author>John Doe</author>
+        <year>2021</year>
+        <genre>Fiction</genre>
+        <price currency="EUR">63.82</price>
+        <reviews>
+            <review>
+                <user>charlie</user>
+                <rating>3</rating>
+                <comment>Excellent content.</comment>
+            </review>
+            <review>
+                <user>bob</user>
+                <rating>5</rating>
+                <comment>Could be better.</comment>
+            </review>
+        </reviews>
+        <translator>George Orwell</translator>
+    </book>
+</library>
