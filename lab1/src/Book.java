@@ -110,7 +110,7 @@ class Book {
         sb.append("  Author: ").append(author).append("\n");
         sb.append("  Year: ").append(year).append("\n");
         sb.append("  Genre: ").append(genre).append("\n");
-        sb.append("  Price: ").append(price).append(" ").append(currency != null ? currency : "").append("\n");
+        sb.append("  Price: ").append(price).append("\n");
         if (isbn != null) {
             sb.append("  ISBN: ").append(isbn).append("\n");
         }
