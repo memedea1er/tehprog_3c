@@ -31,38 +31,38 @@ public class Main {
             String bookXML = books[i];
             Book book = new Book();
 
-            book.id = extractValue(bookXML, "id=\"", "\"");
-            book.title = extractTagValue(bookXML, "title");
-            book.author = extractTagValue(bookXML, "author");
-            book.year = extractTagValue(bookXML, "year");
-            book.genre = extractTagValue(bookXML, "genre");
-            book.price = extractPriceValue(bookXML, "price", extractValue(bookXML, "currency=\"", "\""));
-            book.isbn = extractTagValue(bookXML, "isbn");
-            book.format = extractTagValue(bookXML, "format");
-            book.translator = extractTagValue(bookXML, "translator");
+            book.setId(extractValue(bookXML, "id=\"", "\""));
+            book.setTitle(extractTagValue(bookXML, "title"));
+            book.setAuthor(extractTagValue(bookXML, "author"));
+            book.setYear(extractTagValue(bookXML, "year"));
+            book.setGenre(extractTagValue(bookXML, "genre"));
+            book.setPrice(extractPriceValue(bookXML, "price", extractValue(bookXML, "currency=\"", "\"")));
+            book.setIsbn(extractTagValue(bookXML, "isbn"));
+            book.setFormat(extractTagValue(bookXML, "format"));
+            book.setTranslator(extractTagValue(bookXML, "translator"));
 
             String publisherXML = extractTagValue(bookXML, "publisher");
             if (publisherXML != null) {
                 Publisher publisher = new Publisher();
-                publisher.name = extractTagValue(publisherXML, "name");
-                book.publisher = publisher;
+                publisher.setName(extractTagValue(publisherXML, "name"));
                 String addressXML = extractTagValue(bookXML, "address");
                 if (addressXML != null) {
                     Address address = new Address();
-                    address.city = extractTagValue(addressXML, "city");
-                    address.country = extractTagValue(addressXML, "country");
-                    publisher.address = address;
+                    address.setCity(extractTagValue(publisherXML, "city"));
+                    address.setCountry(extractTagValue(publisherXML, "country"));
+                    publisher.setAddress(address);
                 }
+                book.setPublisher(publisher);
             }
 
             String[] reviews = bookXML.split("<review>");
             for (int j = 1; j < reviews.length; j++) {
                 String reviewXML = reviews[j];
                 Review review = new Review();
-                review.user = extractTagValue(reviewXML, "user");
-                review.rating = extractTagValue(reviewXML, "rating");
-                review.comment = extractTagValue(reviewXML, "comment");
-                book.reviews.add(review);
+                review.setUser(extractTagValue(reviewXML, "user"));
+                review.setRating(extractTagValue(reviewXML, "rating"));
+                review.setComment(extractTagValue(reviewXML, "comment"));
+                book.getReviews().add(review);
             }
 
             library.addBook(book);

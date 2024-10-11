@@ -2,7 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Library {
-    List<Book> books = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
+
+    // Геттеры и сеттеры
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 
     public void addBook(Book book) {
         books.add(book);
