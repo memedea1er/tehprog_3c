@@ -1,5 +1,5 @@
 class Address {
-    String city, country;
+    private String city, country;
 
     public String getCity() {
         return city;
