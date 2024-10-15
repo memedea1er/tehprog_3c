@@ -55,15 +55,7 @@ class Book {
     public void setPrice(String price) {
         this.price = price;
     }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
-
+    
     public String getIsbn() {
         return isbn;
     }
