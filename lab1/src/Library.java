@@ -17,6 +17,14 @@ class Library {
         books.add(book);
     }
 
+    public Book getBook(int index) {
+        if (index >= 0 && index < books.size()) {
+            return books.get(index);
+        } else {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Library:\n");
