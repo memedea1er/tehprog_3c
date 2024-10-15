@@ -55,7 +55,7 @@ class Book {
     public void setPrice(String price) {
         this.price = price;
     }
-    
+
     public String getIsbn() {
         return isbn;
     }
@@ -95,6 +95,16 @@ class Book {
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
+
+    public Review getReview(int index) {
+        if (index >= 0 && index < reviews.size()) {
+            return reviews.get(index);
+        } else {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Book ID: ").append(id).append("\n");
